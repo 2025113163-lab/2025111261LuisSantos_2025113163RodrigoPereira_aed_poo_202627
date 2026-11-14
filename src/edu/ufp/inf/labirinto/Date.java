@@ -1,6 +1,7 @@
 package edu.ufp.inf.labirinto;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -10,7 +11,7 @@ import java.util.GregorianCalendar;
  *
  */
 
-public class Date implements Comparable<Date> {
+public class Date implements Serializable, Comparable<Date> {
 
     private short day;
     private short month;

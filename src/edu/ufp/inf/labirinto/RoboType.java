@@ -1,6 +1,6 @@
 package edu.ufp.inf.labirinto;
 
-enum RoboType {
+public enum RoboType {
 
   EXPLORER,
 

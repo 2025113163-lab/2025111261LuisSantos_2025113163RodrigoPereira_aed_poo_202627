@@ -2,12 +2,13 @@ package edu.ufp.inf.labirinto;
 
 public class HazardousMaterial extends Artefact {
 
-  public HazardousMaterial(double weight, double scientificValue, int dangerLevel, String description) {
-    super(weight, scientificValue, dangerLevel, description);
+  public HazardousMaterial(String id, double weight, double scientificValue, int dangerLevel, String description) {
+    super(id, weight, scientificValue, dangerLevel, description);
   }
 
+  @Override
   public double calculateImpact() {
-  return 0.0;
+    return getWeight() * getDangerLevel() * 1.5;
   }
 
 }

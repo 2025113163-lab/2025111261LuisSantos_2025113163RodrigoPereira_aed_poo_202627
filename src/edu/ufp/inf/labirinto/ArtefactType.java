@@ -1,6 +1,6 @@
 package edu.ufp.inf.labirinto;
 
-enum ArtefactType {
+public enum ArtefactType {
 
   TECH_RELIC,
 
