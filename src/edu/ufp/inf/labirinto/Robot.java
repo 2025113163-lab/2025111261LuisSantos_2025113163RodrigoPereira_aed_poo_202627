@@ -1,8 +1,8 @@
 package edu.ufp.inf.labirinto;
 
-import Integer;
+
 import java.util.List;
-import String;
+
 
 public abstract class Robot extends Entity {
 

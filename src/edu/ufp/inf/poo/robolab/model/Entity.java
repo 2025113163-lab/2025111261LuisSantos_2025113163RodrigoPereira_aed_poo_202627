@@ -3,10 +3,13 @@ package edu.ufp.inf.poo.robolab.model;
 public abstract class Entity {
     private final String id;
 
-    public Entity(String id) {
-        // TODO: rejeitar id nulo ou vazio
+    public Entity(String id) throws IllegalAccessException {
+        //rejeitar id nulo ou vazio
+        if (id == null || id.isBlank()) {
+           throw new IllegalAccessException();
+        }
+
         this.id = id;
-       id.isBlank() { throw new IllegalArgumentException(); }
     }
 
     public String getId() { return id; }

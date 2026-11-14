@@ -1,7 +1,5 @@
 package edu.ufp.inf.labirinto;
 
-import String;
-import edu.ufp.inf.management.int;
 
 public class Room extends Entity {
 

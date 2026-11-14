@@ -1,11 +1,7 @@
 package edu.ufp.inf.management;
 
-import ArrayList<MissionLog>;
-import edu.ufp.inf.labirinto.ZoneType;
-import edu.ufp.inf.labirinto.double;
-import String;
-import edu.ufp.inf.labirinto.Date;
-import edu.ufp.inf.labirinto.RobotStatus;
+import edu.ufp.inf.labirinto.*;
+import java.util.ArrayList;
 
 public interface ManageSearches {
 

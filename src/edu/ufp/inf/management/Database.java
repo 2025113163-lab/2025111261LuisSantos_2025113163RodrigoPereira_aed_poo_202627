@@ -1,17 +1,13 @@
 package edu.ufp.inf.management;
 
-import ArrayList<MissionLog>;
-import java.util.List;
-import edu.ufp.inf.labirinto.ZoneType;
-import edu.ufp.inf.labirinto.double;
-import edu.ufp.inf.labirinto.Room;
-import edu.ufp.inf.labirinto.Robot;
-import String;
-import edu.ufp.inf.labirinto.Artefact;
-import edu.ufp.inf.labirinto.Date;
-import edu.ufp.inf.labirinto.RobotStatus;
 
-class Database implements ManageEntities, ManageSearches {
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.princeton.cs.algs4.ST;
+import edu.ufp.inf.labirinto.*;
+
+public class Database implements ManageEntities, ManageSearches {
 
   private ST<String, Robot> robots;
 

@@ -1,6 +1,5 @@
 package edu.ufp.inf.labirinto;
 
-import Integer;
 import java.util.List;
 
 public class CargoRobot extends Robot {

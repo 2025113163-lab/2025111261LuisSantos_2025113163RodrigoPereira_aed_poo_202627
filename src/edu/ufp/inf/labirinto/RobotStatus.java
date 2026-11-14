@@ -1,6 +1,6 @@
 package edu.ufp.inf.labirinto;
 
-enum RobotStatus {
+public enum RobotStatus {
 
   ACTIVE,
 

@@ -2,7 +2,6 @@ package edu.ufp.inf.management;
 
 import edu.ufp.inf.labirinto.Room;
 import edu.ufp.inf.labirinto.Robot;
-import String;
 import edu.ufp.inf.labirinto.Artefact;
 
 public interface ManageEntities {

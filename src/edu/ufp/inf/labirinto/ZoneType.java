@@ -1,6 +1,6 @@
 package edu.ufp.inf.labirinto;
 
-enum ZoneType {
+public enum ZoneType {
 
   SAFE,
 

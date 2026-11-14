@@ -1,7 +1,5 @@
 package edu.ufp.inf.labirinto;
 
-import Integer;
-import String;
 
 public abstract class Artefact extends Entity {
 
@@ -9,12 +7,20 @@ public abstract class Artefact extends Entity {
 
   public double scientificValue;
 
-  public Integer dangerLevel;
+  public int dangerLevel;
 
   public String description;
 
-  
-  public double calculateImpact() {
+    public Artefact(double weight, double scientificValue, int dangerLevel, String description) {
+        this.weight = weight;
+        this.scientificValue = scientificValue;
+        this.dangerLevel = dangerLevel;
+        this.description = description;
+    }
+
+
+
+    public double calculateImpact() {
   return 0.0;
   }
 

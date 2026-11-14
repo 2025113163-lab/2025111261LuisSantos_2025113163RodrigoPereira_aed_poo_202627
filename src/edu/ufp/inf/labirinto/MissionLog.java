@@ -1,6 +1,5 @@
 package edu.ufp.inf.labirinto;
 
-import String;
 
 public class MissionLog {
 

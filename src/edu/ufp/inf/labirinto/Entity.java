@@ -4,7 +4,7 @@ import edu.ufp.inf.management.Database;
 
 public abstract class Entity {
 
-  public string id;
+  public String id;
 
     public Database database;
 
