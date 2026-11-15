@@ -9,6 +9,18 @@ public class CargoRobot extends Robot {
   private double capacidadeMaxima;
   private final List<Artefact> artifacts;
 
+
+  /**
+   * Cria um robot de carga.
+   *
+   * @param id - identificador único
+   * @param nome - nome do robot
+   * @param bateria - nível de bateria (0 a 100)
+   * @param estado - estado inicial
+   * @param dataVersaoSistema - versão do sistema
+   * @param capacidadeMaxima - peso máximo transportável
+   * @throws IllegalArgumentException - se algum valor for inválido ou a capacidade não for superior a zero
+   */
   public CargoRobot(String id, String nome, int bateria, RobotStatus estado, Date dataVersaoSistema, double capacidadeMaxima) {
     super(id, nome, bateria, dataVersaoSistema, estado);
     if (capacidadeMaxima <= 0) {
@@ -17,7 +29,9 @@ public class CargoRobot extends Robot {
     this.capacidadeMaxima = capacidadeMaxima;
     this.artifacts = new ArrayList<>();
   }
-
+  /**
+   * Calcula a carga atual.
+   */
   public double getCurrentLoad() {
     double total = 0.0;
     for (Artefact a : artifacts) {
@@ -25,7 +39,11 @@ public class CargoRobot extends Robot {
     }
     return total;
   }
-
+  /**
+   * Adiciona um artefacto à carga.
+   *
+   * @param a - artefacto a adicionar
+   */
   public boolean addArtefact(Artefact a) {
     if (a == null) return false;
     if (getCurrentLoad() + a.getWeight() > capacidadeMaxima) {
@@ -33,7 +51,11 @@ public class CargoRobot extends Robot {
     }
     return artifacts.add(a);
   }
-
+  /**
+   * Remove um artefacto da carga.
+   *
+   * @param a - artefacto a remover
+   */
   public boolean removeArtefact(Artefact a) {
     return artifacts.remove(a);
   }

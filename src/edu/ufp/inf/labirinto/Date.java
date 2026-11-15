@@ -7,9 +7,10 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
+ * Data (dia, mês e ano) validada ao ser criada e comparável por ordem cronológica.
  *
  * @author Rui S. Moreira @ FCT - UFP
- *
+ * @author Luis Santos &amp; Rodrigo Pereira
  */
 
 public class Date implements Serializable, Comparable<Date> {

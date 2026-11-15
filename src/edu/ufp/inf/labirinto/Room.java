@@ -38,12 +38,19 @@ public class Room extends Entity {
         this.hazardIndex = hazardIndex;
     }
 
+    /**
+     * Devolve o tipo de zona. Altera o tipo de zona
+     */
     public ZoneType getZone() { return zone; }
     public void setZone(ZoneType zone) {
         if (zone != null) {
             this.zone = zone;
         }
     }
+
+    /**
+     * Devolve o código da sala. Altera o codigo da sala
+     */
 
     public String getCode() { return code; }
     public void setCode(String code) {
@@ -52,7 +59,9 @@ public class Room extends Entity {
         }
         this.code = code;
     }
-
+    /**
+     * Devolve o nível de segurança. Altera o nivel de segurança
+     */
     public int getSecurityLevel() { return securityLevel; }
     public void setSecurityLevel(int securityLevel) {
         if (securityLevel < 0) {
@@ -61,6 +70,9 @@ public class Room extends Entity {
         this.securityLevel = securityLevel;
     }
 
+    /**
+     * Devolve a data de deteçao. Altera a data de deteçao
+     */
     public Date getDetectionDate() { return new Date(detectionDate); }
     public void setDetectionDate(Date detectionDate) {
         if (detectionDate != null) {
@@ -68,6 +80,9 @@ public class Room extends Entity {
         }
     }
 
+    /**
+     * Devolve o índice de perigo. Altera o indice de perigo
+     */
     public double getHazardIndex() { return hazardIndex; }
     public void setHazardIndex(double hazardIndex) {
         if (hazardIndex < 0.0) {
