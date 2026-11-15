@@ -1,0 +1,2 @@
+[ARCHIVED Date{day=15, month=11, year=2026}] Robot{id='R1', nome='Explorador 1', bateria=80, estado=ACTIVE, dataVersao=Date{day=15, month=11, year=2026}}
+[ARCHIVED Date{day=15, month=11, year=2026}] Room{id='S1', code='S-01', zone=SAFE, securityLevel=1, hazardIndex=0.5, detectionDate=Date{day=15, month=11, year=2026}}

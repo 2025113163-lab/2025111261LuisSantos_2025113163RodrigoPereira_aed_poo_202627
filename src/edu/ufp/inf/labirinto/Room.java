@@ -31,10 +31,10 @@ public class Room extends Entity {
         if (hazardIndex < 0.0) {
            throw new IllegalArgumentException("HazardIndex deve ser positivo / nulo");
         }
-        this.zone = zone;
+        this.zone = (zone != null) ? zone : ZoneType.UNKNOWN;
+        this.detectionDate = (detectionDate != null) ? new Date(detectionDate) : new Date();
         this.code = code;
         this.securityLevel = securityLevel;
-        this.detectionDate = detectionDate;
         this.hazardIndex = hazardIndex;
     }
 

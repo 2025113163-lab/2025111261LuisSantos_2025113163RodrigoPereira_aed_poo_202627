@@ -1,7 +1,5 @@
 package edu.ufp.inf.labirinto;
 
-import edu.ufp.inf.management.Database;
-
 import java.io.Serializable;
 import java.util.Objects;
 

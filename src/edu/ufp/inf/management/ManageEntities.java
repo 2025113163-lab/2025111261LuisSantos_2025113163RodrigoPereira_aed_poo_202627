@@ -1,43 +1,32 @@
 package edu.ufp.inf.management;
 
-import edu.ufp.inf.labirinto.RobotStatus;
-import edu.ufp.inf.labirinto.Room;
-import edu.ufp.inf.labirinto.Robot;
-import edu.ufp.inf.labirinto.Artefact;
 import edu.ufp.inf.labirinto.*;
+import java.util.ArrayList;
 
+// Interface que define as operacoes de gestao e arquivo das entidades do sistema
 public interface ManageEntities {
 
-  public void insertRobot(Robot r);
+    void insertRobot(Robot r);
+    Robot removeRobot(String id);
+    boolean editRobot(String id, String nome, int bateria, RobotStatus estado);
+    void listRobots();
 
-  public Robot removeRobot(String id);
+    void insertArtefact(Artefact a);
+    Artefact removeArtefact(String id);
+    boolean editArtefact(String id, double weight, double scientificValue, int dangerLevel, String description);
+    void listArtefacts();
 
-  public boolean editRobot(String id, String nome, int bateria, RobotStatus estado);
+    void insertRoom(Room r);
+    Room removeRoom(String id);
+    boolean editRoom(String id, ZoneType zone, String code, int securityLevel, Date detectionDate, double hazardIndex);
+    void listRooms();
 
-  public void listRobots();
+    void insertStation(MaintenanceStation s);
+    MaintenanceStation removeStation(String id);
+    boolean editStation(String id, int capacity, int availableBays);
+    void listStations();
 
-  public void insertArtefact(Artefact a);
-
-  public Artefact removeArtefact(String id);
-
-  public boolean editArtefact(String id, double weight, double scientificValue, int dangerLevel, String description);
-
-  public void listArtefacts();
-
-  public void insertRoom(Room r);
-
-  public Room removeRoom(String id);
-
-  public boolean editRoom(String id, ZoneType zone, String code, int securityLevel, Date detectionDate, double hazardIndex);
-
-  public void listRooms();
-
-  public void insertStation(MaintenanceStation s);
-
-  public MaintenanceStation removeStation(String id);
-
-  public boolean editStation(String id, int capacity, int availableBays);
-
-  public void listStations();
-
+    void registerMissionLog(MissionLog log);
+    ArrayList<Entity> getArchivedEntities();
+    void listArchivedEntities();
 }
