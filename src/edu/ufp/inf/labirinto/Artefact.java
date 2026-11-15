@@ -19,6 +19,13 @@ public abstract class Artefact extends Entity {
       this.description = (description != null) ? description : "";
   }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{id='" + getId() + "', weight=" + weight
+                + ", scientificValue=" + scientificValue + ", dangerLevel=" + dangerLevel
+                + ", description='" + description + "'}";
+    }
+
   public abstract double calculateImpact();
 
     public double getWeight() { return weight; }

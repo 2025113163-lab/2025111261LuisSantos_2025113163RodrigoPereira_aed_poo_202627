@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 /**
  *
@@ -25,6 +26,8 @@ public class Date implements Serializable, Comparable<Date> {
      * @param year - year
      */
     public Date(short day, short month, int year) {
+        if (month < 1 || month > 12) { throw new IllegalArgumentException("Invalid month"); }
+        if (day < 1 || day > daysMonth(month, year)) { throw new IllegalArgumentException("Invalid day"); }
         this.day = day;
         this.month = month;
         this.year = year;
@@ -49,7 +52,7 @@ public class Date implements Serializable, Comparable<Date> {
      */
     public Date(long millis) {
         java.util.Date d = new java.util.Date(millis);
-        this.day = (short) d.getDay();
+        this.day = (short) d.getDate();
         this.month = (short) (d.getMonth() + 1);
         this.year = d.getYear() + 1900;
     }
@@ -60,7 +63,9 @@ public class Date implements Serializable, Comparable<Date> {
      */
     public Date() {
         Calendar gregCalendar = new GregorianCalendar();
-        //TODO...
+        this.day = (short) gregCalendar.get(Calendar.DAY_OF_MONTH);
+        this.month = (short) (gregCalendar.get(Calendar.MONTH) +1);
+        this.year = gregCalendar.get(Calendar.YEAR);
     }
 
     /**
@@ -74,6 +79,7 @@ public class Date implements Serializable, Comparable<Date> {
      * @param day the day to set
      */
     public void setDay(short day) {
+        if (day < 1 ||  day > daysMonth(month, year)) { throw new IllegalArgumentException("Invalid day"); }
         this.day = day;
     }
 
@@ -88,6 +94,8 @@ public class Date implements Serializable, Comparable<Date> {
      * @param month the month to set
      */
     public void setMonth(short month) {
+        if (month  < 1 || month > 12) { throw new IllegalArgumentException("Invalid month"); }
+        if (day > daysMonth(month, year)) { throw new IllegalArgumentException("Invalid day for this month"); }
         this.month = month;
     }
 
@@ -102,7 +110,9 @@ public class Date implements Serializable, Comparable<Date> {
      * @param year the year to set
      */
     public void setYear(int year) {
+        if (this.day > daysMonth(this.month, year)) { throw new IllegalArgumentException("Invalid day and month for this year"); }
         this.year = year;
+
     }
 
     @Override
@@ -110,6 +120,17 @@ public class Date implements Serializable, Comparable<Date> {
         return "Date{" + "day=" + day + ", month=" + month + ", year=" + year + '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Date date = (Date) o;
+        return day == date.day && month == date.month && year == date.year;    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(day, month, year);
+    }
 
     /**
      * @param d - a given date to compare to
@@ -119,7 +140,12 @@ public class Date implements Serializable, Comparable<Date> {
      */
     @Override
     public int compareTo(Date d) {
-        //TODO...
+        if  (this.year < d.year) { return -1;}
+        if  (this.year > d.year) { return 1;}
+        if  (this.month < d.month) { return -1;}
+        if  (this.month > d.month) { return 1;}
+        if  (this.day < d.day) { return -1;}
+        if  (this.day > d.day) { return 1;}
         return 0;
     }
 
@@ -128,8 +154,7 @@ public class Date implements Serializable, Comparable<Date> {
      * @return true if this date is after d date, false otherwise.
      */
     public boolean afterDate(Date d) {
-        //TODO...
-        return true;
+        return this.compareTo(d) > 0;
     }
 
     /**
@@ -145,8 +170,7 @@ public class Date implements Serializable, Comparable<Date> {
      * @return true if this date is before d date, false otherwise.
      */
     public boolean beforeDate(Date d) {
-        //TODO...
-        return false;
+        return this.compareTo(d) < 0;
     }
 
     /**
@@ -334,6 +358,8 @@ public class Date implements Serializable, Comparable<Date> {
         //System.out.println("TestIntroDateApp - main(): "+ jan1969 +" -> "+ jan2019 + ":\t hours="+days*24);
         //System.out.println("TestIntroDateApp - main(): "+ jan1969 +" -> "+ jan2019 + ":\t minutes="+days*24*60);
         //System.out.println("TestIntroDateApp - main(): "+ jan1969 +" -> "+ jan2019 + ":\t minutes="+days*24*60*60);
+
+
     }
 
 }

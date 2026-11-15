@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
+
 public abstract class Robot extends Entity {
 
   private String nome;
@@ -30,6 +31,11 @@ public abstract class Robot extends Entity {
       this.missionLog.add(log);
     }
   }
+
+  @Override
+  public String toString() {
+    return "Robot{" + "id='" + getId() + '\'' + ", nome='" + nome + '\'' + ", bateria=" + bateria + ", estado=" + estado + ", dataVersao=" + dataVersaoSistema + '}';
+    }
 
   public List<MissionLog> getMissionLog() {
     return Collections.unmodifiableList(missionLog);
