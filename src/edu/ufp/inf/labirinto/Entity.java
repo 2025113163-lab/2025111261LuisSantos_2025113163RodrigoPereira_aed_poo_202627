@@ -17,7 +17,7 @@ public abstract class Entity implements Serializable {
 
   public Entity(String id) throws IllegalArgumentException {
     if (id == null || id.isBlank()) {
-      throw new IllegalArgumentException("O id da entidade não pode ser nulo ou vazio.");
+      throw new IllegalArgumentException("O id da entidade não pode ser null ou vazio.");
     }
     this.id = id;
   }
